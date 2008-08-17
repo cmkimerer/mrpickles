@@ -8,5 +8,5 @@ def registerHandler(HandlerClass):
 	handlers[cmd] = handler.parser
 
 def runHandler(datagram):
-	cmd = unpack_from("l",datagram,4)
-	handlers[cmd](datagram[4:len(datagram)])
+	cmd = unpack_from("ll",datagram)
+	handlers[cmd[0]](cmd[1])

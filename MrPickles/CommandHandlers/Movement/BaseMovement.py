@@ -8,5 +8,8 @@ class BaseMovement(BaseHandler):
 		
 	
 	def parser(self,boogz):
-		change = unpack_from("l",boogz)
+		if type(boogz) is str:
+			change = unpack_from("l",boogz)
+		else:
+			change = boogz
 		self.PhidgetMovement.setValue(change)

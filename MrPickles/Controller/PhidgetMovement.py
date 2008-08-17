@@ -10,4 +10,4 @@ class PhidgetMovement:
 		self.servo.waitForAttach(10000)
 		
 	def setValue(self,value):
-		pass
+		self.servo.setPosition(0,value)
